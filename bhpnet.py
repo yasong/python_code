@@ -27,7 +27,7 @@ def usage():
 	print "Example:"
 	print "bhpnet.py -t 192.168.0.1 -p 5555 -l -c"
 	print "bhpnet.py -t 192.168.0.1 -p 5555 -l -u=c:\\target.exe"
-	print "bhpnet.py -t 192.168.0.1 -p 5555 -l -e=\"cat /etc/passwd\"
+	print "bhpnet.py -t 192.168.0.1 -p 5555 -l -e=\"cat /etc/passwd\""
 	print "echo 'ABCDEFGHI' | ./bhpnet.py -t 192.168.11.12 -p 135"
 	sys.exit(0)
 	
@@ -49,7 +49,7 @@ def main():
 		usage()
 		
 	for o, a in opts:
-		if o in ("-h"),"--help"):
+		if o in ("-h","--help"):
 			usgae()
 		elif o in ("-l","--listen"):
 			listen = True
