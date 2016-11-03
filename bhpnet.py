@@ -91,7 +91,7 @@ def run_command():
 		output = "Falied to execute  commad.\r\n"
 		
 	return output
-def cient_handelr(client_socket):
+def client_handler(client_socket):
 	global upload
 	global execute
 	global command
