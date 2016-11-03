@@ -126,7 +126,4 @@ def request_handler(buffer):
 
 def response_handler(buffer):
     #change the packets
-    return buffer.
-
-            
-           
+    return buffer
