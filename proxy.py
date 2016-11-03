@@ -18,7 +18,7 @@ def server_loop(local_host, local_port, remote_host, remote_port, receive_first)
     
     server.listen(5)
     
-    while:
+    while True:
         client_socket, addr = server.accept()
         
         print "[==>] Received incoming connection from %s:%d" % (addr[0], addr[1])
@@ -101,7 +101,7 @@ def hexdump(src, length=16):
     for i in xrange(0, len(src), length):
         s = src[i:i+length]
         hexa = b' '.join(["%0*X" % (digits, ord(x)) for x in s])
-        text = b''.join([x if 0x20 <= ord(x) < 0x7F else b''. for x in s])
+        text = b''.join([x if 0x20 <= ord(x) < 0x7F else b'.' for x in s])
         result.append(b"%04X    %-*s    %s" % (i, lenght*(digits + 1), hexa, text))
         
     print b'\n'.joi(result)
