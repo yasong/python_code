@@ -18,19 +18,19 @@ class IP(Structure):
         ("dst",         c_ulong)
     ]
 
-def __new__(self, socket_buffer=None):
-    return self.from_buffer_copy(socket_buffer)
+    def __new__(self, socket_buffer=None):
+        return self.from_buffer_copy(socket_buffer)
 
-def __init__(self,socket_buffer=None):
-    self.protocol_map = {1:"ICMP", 6:"TCP", 17:"UDP"}
+    def __init__(self,socket_buffer=None):
+        self.protocol_map = {1:"ICMP", 6:"TCP", 17:"UDP"}
 
-    self.src_address = socket.inet_ntoa(struct.pack("<L",self.src))
-    self.dst_address = socket.inet_ntoa(struct.pack("<L",self.dst))
+        self.src_address = socket.inet_ntoa(struct.pack("<L",self.src))
+        self.dst_address = socket.inet_ntoa(struct.pack("<L",self.dst))
 
-    try:
-        self.protocol = self.protocol_map[self.protocol_num]
-    except:
-        self.protocol =str(self.protocol_num)
+        try:
+            self.protocol = self.protocol_map[self.protocol_num]
+        except:
+            self.protocol =str(self.protocol_num)
 #
 host = "10.104.171.27"
 
@@ -54,7 +54,7 @@ try:
     while True:
 
         #read packets
-        raw_buffer = sniffer.recvfrom(65565)[0]
+        raw_buffer = sniffer.recvfrom(65565)
         print raw_buffer[0:20]
         #if type(raw_buffer[0:20]) == "int":
         
