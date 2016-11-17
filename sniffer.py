@@ -54,8 +54,8 @@ try:
     while True:
 
         #read packets
-        raw_buffer = sniffer.recvfrom(65565)
-        print raw_buffer[0:20]
+        raw_buffer = sniffer.recvfrom(65565)[0]
+        #print raw_buffer[0:20]
         #if type(raw_buffer[0:20]) == "int":
         
         ip_header =IP(raw_buffer[0:20])
