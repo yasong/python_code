@@ -6,7 +6,7 @@ def usage():
 	print "Detect Trojan Tool"
 	print 
 	print "Usgae: DTrojan.py"
-	print "-f --feature					-	detect the packet feature of the Trojan"
+	print "-fx --feature					-	detect the packet feature of the Trojan"
 	print "-m --modify					-	change the feature or add feature of the Trojan"
 	print "-a --add						-	add the feature of the Trojan"
 	print "-l --list					- 	list the feature of the Trojan in the local lib"
@@ -18,6 +18,7 @@ def usage():
 	print "DTrojan.py -l"
 	print "DTrojan.py -s"
 	
-	print "DTrojan.py -m -n huigezi -f 10 "
+	print "DTrojan.py -m -n huigezi -f 10 16 08 27"
+	print 
 	
 	
